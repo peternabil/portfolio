@@ -1,7 +1,3 @@
-import ASURTIMG from "../assets/asurtit.png";
-import BLC from "../assets/blc.png";
-import CODEGEIST from "../assets/code-geist.png";
-import LEAP2FUTURE from "../assets/leap2future.png";
 import LIFEAUDIO from "../assets/life-audio-productions.png";
 import PEOPLECOUNTER from "../assets/people-counter.jpeg";
 import CYPOD from "../assets/cypod.png";
@@ -10,7 +6,6 @@ import YALASAFER from "../assets/yalasafer.jpeg";
 import React from "react";
 import AngularIcon from "../assets/icons/icons8-angular";
 import FlaskIcon from "../assets/icons/icons8-flask";
-import DjangoIcon from "../assets/icons/icons8-django";
 import NodeIcon from "../assets/icons/icons8-nodejs";
 import ReactIcon from "../assets/icons/icons8-react";
 import TensorFlowIcon from "../assets/icons/icons8-tensorflow";
@@ -30,7 +25,7 @@ export const PROJECTS = [
             },
             {
                 title: "ReactJs",
-                link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                link: "https://react.dev/",
                 icon: <ReactIcon />
             },
             // {
@@ -123,7 +118,7 @@ export const JOBS = [
             },
             {
                 title: "ReactJs",
-                link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                link: "https://react.dev/",
                 icon: <ReactIcon />
             },
             {
@@ -144,7 +139,7 @@ export const JOBS = [
         technologies:[
             {
                 title: "Angular 10",
-                link: "https://go.dev/",
+                link: "https://angular.io/",
                 icon: <AngularIcon />
             },
         ],
