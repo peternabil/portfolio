@@ -23,7 +23,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Resume from "./assets/files/resume.pdf";
 
 function ColorSchemeToggle() {
-  const { mode, setMode } = useColorScheme();
+  const { mode, setMode } = useColorScheme('dark');
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
     setMounted(true);
