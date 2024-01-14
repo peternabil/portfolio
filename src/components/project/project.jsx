@@ -7,7 +7,7 @@ function Project({ title, description, image, link1, link2, technologies, type, 
     return (
         <Card key={title} orientation="horizontal" variant="outlined" >
             <CardOverflow>
-                <AspectRatio ratio="1" sx={{ paddingTop: '50%', paddingInlineStart: '10%', borderRadius: '50%', width: 100, height: 150 }}>
+                <AspectRatio ratio="1" sx={{ paddingTop: '50%', paddingInlineStart: '10%', borderRadius: '50%', width: 80, height: 150 }}>
                     <img
                         src={image}
                         srcSet={image}
@@ -26,7 +26,7 @@ function Project({ title, description, image, link1, link2, technologies, type, 
                 </Typography>
                 {technologies ? <Technologies technologies={technologies} /> : React.null}
                 <Typography level="body-sm">{description}</Typography>
-                <Box marginTop={1} justifyContent={'center'} gap={1} display={'flex'}>
+                <Box marginTop={1} flexWrap={'wrap'} justifyContent={'center'} gap={1} display={'flex'}>
                     {link1 ? <a style={{ textDecoration: 'none' }} href={link1} target="_blank"><Button
                         variant="outlined"
                         color="primary"
