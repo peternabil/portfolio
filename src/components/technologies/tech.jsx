@@ -2,7 +2,6 @@ import { List, ListItem, ListItemDecorator, SvgIcon, Typography } from "@mui/joy
 import React from "react";
 
 function Technologies({ technologies }) {
-    console.log(technologies)
     return (
         <>
             <Typography
