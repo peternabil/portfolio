@@ -4,10 +4,12 @@ import Box from "@mui/joy/Box";
 import CssBaseline from "@mui/joy/CssBaseline";
 import framesxTheme from "./theme";
 import IconButton from "@mui/joy/IconButton";
+import avatar from "./assets/avatar.png";
 
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import {
+  Avatar,
   Divider,
   Tab,
   TabList,
@@ -17,13 +19,13 @@ import {
 } from "@mui/joy";
 import Project from "./components/project/project";
 import { PROJECTS, JOBS } from "./data/projects";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import Resume from "./assets/files/resume.pdf";
 
 function ColorSchemeToggle() {
-  const { mode, setMode } = useColorScheme('dark');
+  const { mode, setMode } = useColorScheme("dark");
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
     setMounted(true);
@@ -38,19 +40,29 @@ function ColorSchemeToggle() {
         zIndex: 999,
         top: "0rem",
         width: "100%",
-        backgroundColor: "background.surface"
+        backgroundColor: "background.surface",
       }}
     >
       <Box display={"flex"} justifyContent={"space-between"} padding={1}>
-        <Typography fontSize="xl4" fontWeight="xl" width={"70%"}>
-          Peter Sadek
-        </Typography>
+        <Box
+          display={"flex"}
+          justifyContent={"start"}
+          alignItems={"center"}
+          padding={1}
+          gap={1}
+        >
+          <Avatar size="lg" alt="Peter Nabil" src={avatar} />
+          <Typography fontSize="xl4" fontWeight="xl">
+            Peter Sadek
+          </Typography>
+        </Box>
         <IconButton
           id="toggle-mode"
-          size="lg"
-          variant="soft"
+          size="md"
+          variant="plain"
           color="neutral"
           width="100%"
+          height="100%"
           onClick={() => {
             if (mode === "light") {
               setMode("dark");
@@ -59,7 +71,7 @@ function ColorSchemeToggle() {
             }
           }}
           sx={{
-            borderRadius: "30%",
+            borderRadius: "10%",
             boxShadow: "sm",
           }}
         >
@@ -80,9 +92,15 @@ function App() {
       <CssVarsProvider disableTransitionOnChange theme={framesxTheme}>
         <CssBaseline />
         <ColorSchemeToggle />
-        <Box marginTop='100px'>
-          <Box display="flex" flexWrap={'wrap'} alignItems={'center'} padding={1} gap={2}>
-            <Typography minWidth={'100px'} fontSize="lg" fontWeight="lg">
+        <Box marginTop="100px">
+          <Box
+            display="flex"
+            flexWrap={"wrap"}
+            alignItems={"center"}
+            padding={1}
+            gap={2}
+          >
+            <Typography minWidth={"100px"} fontSize="lg" fontWeight="lg">
               Personal Links:
             </Typography>
             <IconButton
@@ -95,8 +113,12 @@ function App() {
                 boxShadow: "sm",
               }}
             >
-              <a href={'https://github.com/peternabil/'} target={"_blank"} style={{textDecoration: 'none'}}>
-                <GitHubIcon color={'primary'} />
+              <a
+                href={"https://github.com/peternabil/"}
+                target={"_blank"}
+                style={{ textDecoration: "none" }}
+              >
+                <GitHubIcon color={"primary"} />
               </a>
             </IconButton>
             <IconButton
@@ -109,30 +131,39 @@ function App() {
                 boxShadow: "sm",
               }}
             >
-              <a href={'https://www.linkedin.com/in/peternabil/'} target={"_blank"} style={{textDecoration: 'none'}}>
-                <LinkedInIcon color={'primary'} />
+              <a
+                href={"https://www.linkedin.com/in/peternabil/"}
+                target={"_blank"}
+                style={{ textDecoration: "none" }}
+              >
+                <LinkedInIcon color={"primary"} />
               </a>
             </IconButton>
-            <a href={Resume} download={'peter-sadek-resume.pdf'} target={"_blank"} style={{textDecoration: 'none'}}>
-            <IconButton
-              size="md"
-              variant="soft"
-              color="neutral"
-              width="100%"
-              sx={{
-                borderRadius: "10px",
-                boxShadow: "sm",
-              }}
+            <a
+              href={Resume}
+              download={"peter-sadek-resume.pdf"}
+              target={"_blank"}
+              style={{ textDecoration: "none" }}
             >
+              <IconButton
+                size="md"
+                variant="soft"
+                color="neutral"
+                width="100%"
+                sx={{
+                  borderRadius: "10px",
+                  boxShadow: "sm",
+                }}
+              >
                 Download Resume
-                <FileDownloadIcon color={'primary'} />
-            </IconButton>
+                <FileDownloadIcon color={"primary"} />
+              </IconButton>
             </a>
           </Box>
           <Tabs
             aria-label="Vertical tabs"
             orientation="horizontal"
-            sx={{ minWidth: 300, height: '100%' }}
+            sx={{ minWidth: 300, height: "100%" }}
             marginTop={"100px"}
           >
             <TabList tabFlex={1}>
@@ -161,7 +192,7 @@ function App() {
                           image={project.image}
                           link1={project.link1}
                           link2={project.link2}
-                          fitImg={'fill'}
+                          fitImg={"fill"}
                         />
                         <Divider />
                       </Box>
@@ -183,7 +214,7 @@ function App() {
                           title={job.title}
                           description={job.description}
                           image={job.image}
-                          fitImg={'contain'}
+                          fitImg={"contain"}
                         />
                         <Divider />
                       </Box>
